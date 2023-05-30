@@ -1,0 +1,17 @@
+server:
+  port: 8020
+
+spring:
+  application:
+    # 服务名字
+    name: nacos-client-1
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8868
+      config:
+        server-addr: 127.0.0.1:8868
+        # 默认properties
+        file-extension: yml

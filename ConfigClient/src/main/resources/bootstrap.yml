@@ -1,0 +1,23 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: config-client-1 #服务名称
+  cloud:
+    config:
+      label: main
+      name: config
+      profile: dev
+      uri: http://localhost:8888
+#    config:
+#      uri: http://localhost:8888 #配置服务的地址 bootstrap.yml
+#      enabled: true #开启配置
+#      profile: dev  #版本
+#      label: ""     #git配置的分支信息，master类似的
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+

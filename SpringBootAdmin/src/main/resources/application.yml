@@ -1,0 +1,13 @@
+management:
+  health:
+    redis:
+      enabled: false  #防止因为redis而导致健康检查不过，导致在admin中显示应用状态为down
+    mail:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"   #这里因为是测试可以用*，暴露所有，但生产环境需要特别设置
+  endpoint:
+    health:
+      show-details: always

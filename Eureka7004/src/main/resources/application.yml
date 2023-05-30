@@ -1,0 +1,22 @@
+server:
+  port: 7004
+
+spring:
+  application:
+    name: eureka7004
+
+eureka:
+  instance:
+    hostname: 127.0.0.1
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://eureka7002:7002/eureka, http://eureka7003:7003/eureka
+
+logging:
+  level:
+    com:
+      netflix:
+        eureka: OFF
+        discovery: OFF

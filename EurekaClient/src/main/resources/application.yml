@@ -1,0 +1,32 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: eureka-client-1
+  profiles:
+    active: dev
+
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:7002/eureka/,http://localhost:7003/eureka/,http://localhost:7004/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health
+  info:
+    env:
+      enabled: true
+
+
+# 用于在 /actuator/info 网址显示内容
+info:
+  app-name: eureka-client-1

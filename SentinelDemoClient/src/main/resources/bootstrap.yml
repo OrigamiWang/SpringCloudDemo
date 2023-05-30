@@ -1,0 +1,33 @@
+server:
+  port: 8030
+
+spring:
+  application:
+    # 服务名字
+    name: sentinel-demo-client
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8868
+      config:
+        server-addr: 127.0.0.1:8868
+        # 默认properties
+        file-extension: yml
+    sentinel:
+      enabled: true
+      transport:
+        dashboard: localhost:8070
+        port: 8719
+        clientIp: 8030
+feign:
+  sentinel:
+    enabled: true
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include=*:

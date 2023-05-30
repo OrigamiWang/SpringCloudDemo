@@ -1,0 +1,21 @@
+management:
+  health:
+    redis:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+
+spring:
+  boot:
+    admin:
+      client:
+        # admin-server地址
+        url: http://localhost:8040
+#        username:
+#        password:

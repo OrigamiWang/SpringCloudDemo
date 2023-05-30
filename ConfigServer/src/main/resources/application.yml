@@ -1,0 +1,45 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: cloud-config-center
+  profiles:
+    active: dev
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/origamiwang/spring-cloud-config.git
+#          username:
+#          password:
+          skip-ssl-validation: true
+          timeout: 10
+          search-paths:
+            - spring-cloud-config
+      label: main
+  # 消息队列，用于bus，刷新配置
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "bus-refresh"
+#  裸连连不上，开VPN报错, 换用gitee
+
+#  cloud:
+#    config:
+#      server:
+#        native:
+#          search-locations: classpath:/config
+#      label: ""
+#    bus:
+#      refresh:
+#        enabled: true

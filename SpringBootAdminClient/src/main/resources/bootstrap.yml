@@ -1,0 +1,18 @@
+server:
+  port: 8041
+
+
+
+spring:
+  application:
+    name: spring-boot-admin-client
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8868
+      config:
+        server-addr: 127.0.0.1:8868
+        # 默认properties
+        file-extension: yml

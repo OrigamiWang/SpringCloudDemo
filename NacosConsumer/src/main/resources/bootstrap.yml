@@ -1,0 +1,31 @@
+server:
+  port: 8022
+
+spring:
+  application:
+    name: nacos-consumer
+  profiles:
+    active: dev
+  cloud:
+    config:
+      override-none: true
+    nacos:
+      discovery:
+        server-addr: localhost:8868
+      config:
+        server-addr: localhost:8868
+        file-extension: yml
+
+    openfeign:
+      circuitbreaker:
+        enabled: true
+        alphanumeric-ids:
+          enabled: true
+
+hystrix:
+  metrics:
+    enabled: true
+
+config:
+  name: nacos-consumer22222
+  port: 802222222

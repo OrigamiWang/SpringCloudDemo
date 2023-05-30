@@ -1,0 +1,9 @@
+**/src/test/
+**/*.iml
+**/target/
+**/.iml
+*.iml
+**/.gitignore
+.idea
+!.gitignore
+SkyWalkingDemo/agent/

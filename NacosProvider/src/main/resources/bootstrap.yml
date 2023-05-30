@@ -1,0 +1,24 @@
+server:
+  port: 8021
+
+spring:
+  application:
+    name: nacos-provider
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        file-extension: yml
+        server-addr: localhost:8868
+      discovery:
+        server-addr: localhost:8868
+    openfeign:
+      circuitbreaker:
+        enabled: true
+    loadbalancer:
+      enabled: true
+
+hystrix:
+  metrics:
+    enabled: true
